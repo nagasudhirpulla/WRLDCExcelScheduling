@@ -114,6 +114,7 @@ If canProceed = False Then
     Exit Sub
 End If
 
+''TODO UPDATE IF EXISTS AND CREATE IF ABSENT
 ''Construct initial sql prefix
 Dim sqlInitial As String
 sqlInitial = "UPDATE generator SET "
@@ -168,6 +169,7 @@ End If
 
 End Sub
 
+
 Private Function FieldExistsInRS( _
    ByRef rs As ADODB.Recordset, _
    ByVal fieldName As String)
@@ -184,3 +186,4 @@ Private Function FieldExistsInRS( _
     
    FieldExistsInRS = False
 End Function
+
