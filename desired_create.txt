@@ -18,5 +18,9 @@ Paste the snames from A2 in horizontal direction
 
 Get the appropriate entitlements for all the snames and paste them in the desired entitlements page. This acts as a cache for the entitlement check and data validation purposes
 
+Check the order of snames in the desired page
+
 Iterate through each constituent sname header
   Get the desired values from the desired requisition table for the selected generator, constituent, date, revision number (revision number = max revision of revision number <= selected revision number)
+
+  Insert into the table
