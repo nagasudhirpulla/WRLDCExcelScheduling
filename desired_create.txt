@@ -1,0 +1,22 @@
+Pseudo Code for desired Requisition creation from excel
+-------------------------------------------------------
+Fetch the max revision number from revision table and load them into a combo box for revision selection by the user
+
+Get the generator sname from the combo box
+
+Get the date from the date input text box
+
+Get the revision number from the revision number input box
+
+Get the generator id for the selected generator sname from the generator table
+
+Get the constituent snames and ids of the constituents who have entitlements in the generator with appropriate enforcement date from the entitlements table
+
+Clear the desired entitlements sheet and desired requisitions page
+
+Paste the snames from A2 in horizontal direction
+
+Get the appropriate entitlements for all the snames and paste them in the desired entitlements page. This acts as a cache for the entitlement check and data validation purposes
+
+Iterate through each constituent sname header
+  Get the desired values from the desired requisition table for the selected generator, constituent, date, revision number (revision number = max revision of revision number <= selected revision number)
