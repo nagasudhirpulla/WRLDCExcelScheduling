@@ -18,8 +18,6 @@ Get the constituent snames and ids of the constituents who have entitlements in 
 
 Clear the desired entitlements sheet and desired requisitions page
 
-Paste the snames from A2 in horizontal direction
-
 Get the appropriate entitlements for all the snames and paste them in the desired entitlements page. This acts as a cache for the entitlement check and data validation purposes
 
 Check the order of snames in the desired page and abort with warning and console entry if order not satisfied
