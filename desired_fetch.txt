@@ -1,0 +1,31 @@
+Pseudo Code for desired Requisition fetching from database to excel
+-------------------------------------------------------------------
+Prerequisite - Fetch the max revision number from revision table and load the combo box for revision selection by the user
+
+Prerequisite - Load the generator names combo box
+
+Setup the database connection
+
+Get the generator sname from the combo box
+
+Get the date from the date input text box
+
+Get the revision number from the revision number input box
+
+Get the generator id for the selected generator sname from the generator table
+
+Get the constituent snames and ids of the constituents who have entitlements in the generator with appropriate enforcement date from the entitlements table
+
+Clear the desired entitlements sheet and desired requisitions page
+
+Get the appropriate entitlements for all the snames and paste them in the desired entitlements page. This acts as a cache for the entitlement check and data validation purposes
+
+Start the Transaction (#future)
+
+Get the requisition values in primary sorting order of sname and secondary sorting criteria of tblock and insert it in desired page with green color
+
+Do the filling of empty cells with value equal to the above row value
+
+End the Transaction (#future)
+
+End the database connection
