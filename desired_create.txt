@@ -1,6 +1,10 @@
 Pseudo Code for desired Requisition creation from excel
 -------------------------------------------------------
-Fetch the max revision number from revision table and load them into a combo box for revision selection by the user
+Prerequisite - Fetch the max revision number from revision table and load the combo box for revision selection by the user
+
+Prerequisite - Load the generator names combo box
+
+Setup the database connection
 
 Get the generator sname from the combo box
 
@@ -18,9 +22,17 @@ Paste the snames from A2 in horizontal direction
 
 Get the appropriate entitlements for all the snames and paste them in the desired entitlements page. This acts as a cache for the entitlement check and data validation purposes
 
-Check the order of snames in the desired page
+Check the order of snames in the desired page and abort with warning and console entry if order not satisfied
+
+Start the Transaction (#future)
 
 Iterate through each constituent sname header
-  Get the desired values from the desired requisition table for the selected generator, constituent, date, revision number (revision number = max revision of revision number <= selected revision number)
+    Do the data validations like desired belongs to [0, entitlement] if numeric and if non numeric check if value is FULL, numeric+p (check for TMS pattern, OWN+RSD, OWN+URS+RSD PATTERN in the #future).
+    
+    If data validation fails, then color the cells red and skip the iteration for the row
+  
+    Get the value from each row and insert it in desired table if value not equal to above row value
+    
+End the Transaction (#future)
 
-  Insert into the table
+End the database connection
